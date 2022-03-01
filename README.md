@@ -28,10 +28,7 @@ git clone https://github.com/wallwhite/Palyanytsya.git
 ```
 cd ./Palyanytsya
 ```
-- Configure env file
-```
-cp -R ./ ./docker-compose.yml
-```
+
 
 ## Easy initialization
 
