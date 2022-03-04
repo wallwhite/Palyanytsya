@@ -1,0 +1,52 @@
+{
+  "name": "palyanytsya",
+  "version": "2.0",
+  "description": "palyanytsya",
+  "productName": "Palyanytsya",
+  "author": "Yaroslav Romanenko <yarikrom05@gmail.com>",
+  "private": true,
+  "repository": "https://github.com/wallwhite/Palyanytsya",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "start": "NODE_ENV=production node ./build/entry.js",
+    "lint": "eslint --ext .js,.ts,.vue ./"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "colors": "^1.4.0",
+    "core-js": "^3.6.5",
+    "delay": "^5.0.0",
+    "dgram": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "net": "^1.0.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@types/node": "^17.0.21",
+    "@types/node-fetch": "^2.6.1",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^5.1.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
