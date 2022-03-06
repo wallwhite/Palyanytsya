@@ -29,12 +29,10 @@ git clone https://github.com/wallwhite/Palyanytsya.git
 cd ./Palyanytsya
 ```
 
-- Install node.js (next command for ubuntu)
-
+- Initialization
 ```
-apt install nodejs
+bash init.sh
 ```
-
 
 
 ## Easy starting
