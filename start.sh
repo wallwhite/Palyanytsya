@@ -146,6 +146,9 @@ else
   printf "$WORKER" >> ./WORKER_ID
 fi
 
+# Install yarn
+npm install --global yarn
+
 # Go to the script directory
 cd ./worker
 
