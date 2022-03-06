@@ -1,21 +1,21 @@
-echo "initialization on Windows"
-echo "install brew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo "initialization on Linux"
 
-if [[ $(command -v brew) == "" ]]; then
-   echo "Installing Hombrew"
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-    brew update
-fi
+echo "Updating packages..."
+sudo apt update
+
+# TODO add universal check function
 
 if [[ $(command -v node) == "" ]]; then
    echo "Installing Node"
-   brew install node
+   sudo apt-get install -y nodejs
 fi
 
-echo "Install yarn "
-npm install --global yarn
+if [[ $(command -v yarn) == "" ]]; then
+   echo "Install yarn "
+   npm install --global yarn
+fi
 
-echo "Install Typescript"
-npm install -g typescript
+if [[ $(command -v yarn) == "" ]]; then
+   echo "Install Typescript"
+   npm install -g typescript
+fi

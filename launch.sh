@@ -1,4 +1,6 @@
-git clone https://github.com/wallwhite/Palyanytsya.git
+#!/bin/bash 
+
+git clone https://github.com/wallwhite/Palyanytsya.git 
 
 cd ./Palyanytsya
 
