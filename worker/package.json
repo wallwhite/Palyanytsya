@@ -12,12 +12,14 @@
     "lint": "eslint --ext .js,.ts,.vue ./"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.179",
     "axios": "^0.21.1",
     "colors": "^1.4.0",
     "core-js": "^3.6.5",
     "delay": "^5.0.0",
     "dgram": "^1.0.1",
     "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
     "net": "^1.0.2",
     "path": "^0.12.7"
   },
