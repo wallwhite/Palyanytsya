@@ -49,9 +49,10 @@ FILE_ENV=./.env
 if test -f "$FILE_ENV"; then
   rm -rf ./.env
   echo "\n[${GREEN} INFO ${ENDCOLOR}]: Deprecated .env removed"
-  cp ./.env.example ./.env
-  echo "\n[${GREEN} INFO ${ENDCOLOR}]: New .env created"
 fi
+
+cp ./.env.example ./.env
+echo "\n[${GREEN} INFO ${ENDCOLOR}]: New .env created"
 
 # Get params
 while getopts q:c:h:help: flag
