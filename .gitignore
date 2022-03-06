@@ -1,1 +1,9 @@
+.DS_Store
+.thumbs.db
+*/node_modules
+*/build
+VPN_KEY
+WORKER_ID
+docker-compose.yml
+thread*
 .env
