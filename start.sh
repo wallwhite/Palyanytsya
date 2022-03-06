@@ -149,6 +149,9 @@ fi
 # Go to the script directory
 cd ./worker
 
+echo "\n[${GREEN} INFO ${ENDCOLOR}]: Install dependencies."
+yarn install 
+
 # Build the bundle
 BUILD_DIR=./build
 if test -d "$BUILD_DIR"; then
