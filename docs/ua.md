@@ -29,6 +29,12 @@ git clone https://github.com/wallwhite/Palyanytsya.git
 cd ./Palyanytsya
 ```
 
+- Встановлення node.js (наступна команда для ubuntu)
+
+```
+apt install nodejs
+```
+
 ## Легкий старт
 
 Для запуску виконайте 

@@ -29,10 +29,17 @@ git clone https://github.com/wallwhite/Palyanytsya.git
 cd ./Palyanytsya
 ```
 
+- Install node.js (next command for ubuntu)
+
+```
+apt install nodejs
+```
+
+
 
 ## Easy starting
 
-For initialization use the following command:
+For starting use the following command:
 ```
 bash start.sh
 ```
@@ -43,7 +50,7 @@ Command line arguments:
 - `-c` - Set ExpressVPN code.
 - `-help` , `-h` - help
 
-You also can set this data step by step running the following command `bashstart.sh` without arguments.
+You also can set this data step by step running the following command `bash start.sh` without arguments.
 
 VPN region will be selected randomly by script and will be changed later on another.
 
@@ -58,10 +65,10 @@ Target base will be released later with statuses.
 command example:
 
 ```
-bash init.sh -q 10 -c ffu34hsdf8ee4nfsdn34nsfd -a
+bash start.sh -c ffu34hsdf8ee4nfsdn34nsfd -q 10
 ```
 
-where `ffu34hsdf8ee4nfsdn34nsfd` - is your code and `frma` is France server alias from table.
+where `ffu34hsdf8ee4nfsdn34nsfd` - is your code  ExpressVPN and `10` - conteiners count.
 
 ### Commands
 
