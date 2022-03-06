@@ -1,4 +1,6 @@
+
+![Alt text](static/logo_palyanytsya.png?raw=true "Title")
 ## Посилання на документації 
 
 -  [Українська](docs/ua.md)
--  [Англійска](docs/eng.md)
+-  [English](docs/eng.md)
