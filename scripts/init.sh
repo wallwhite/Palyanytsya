@@ -33,7 +33,11 @@ function printMessage {
 
 # Install packages and package manager
 echo "Updating packages..."
-case "${"$(uname)"}" in
+echo $(uname)
+UNAME="$(uname)"
+
+
+case "${UNAME}" in
   'Linux')
     sudo apt update
   ;;
@@ -56,7 +60,7 @@ then
   MESSAGE="NodeJS does not exist. We try to install automaticaly if your OS is MacOS or Linux. If your OS is windows please install NodeJS"
   printMessage
   
-  case "${"$(uname)"}" in
+  case "${UNAME}" in
     'Linux')
       curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
       sudo apt-get install -y nodejs
