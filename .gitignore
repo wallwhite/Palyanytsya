@@ -1,9 +1,10 @@
 .DS_Store
 .thumbs.db
-*/node_modules
+*/**/node_modules
 */build
 VPN_KEY
 WORKER_ID
+CONTAINERS_COUNT
 docker-compose.yml
 thread*
 .env

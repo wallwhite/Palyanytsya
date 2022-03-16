@@ -1,4 +1,7 @@
+const fs = require('fs')
 import Colors from 'colors';
+
+const REQUEST_LOG_FILE_PATH = "../../logs/requestsCount"; 
 
 export const logError = (message: string) => {
   console.log(`${Colors.grey("[") + Colors.red("ERROR") + Colors.grey("]")}: ${message}`);

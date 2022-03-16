@@ -1,4 +1,4 @@
-
+#!/bin/bash
 echo "Stop vpn..."
 
 CONTAINER_NAME=expressvpn

@@ -8,20 +8,25 @@
   "repository": "https://github.com/wallwhite/Palyanytsya",
   "scripts": {
     "build": "tsc --project ./tsconfig.json",
-    "start": "NODE_ENV=production node ./build/entry.js",
+    "start": "NODE_ENV=production node --experimental-modules ./build/entry.js",
     "lint": "eslint --ext .js,.ts,.vue ./"
   },
   "dependencies": {
     "@types/lodash": "^4.14.179",
-    "axios": "^0.21.1",
+    "axios": "^0.26.1",
+    "cluster": "^0.7.7",
     "colors": "^1.4.0",
     "core-js": "^3.6.5",
     "delay": "^5.0.0",
     "dgram": "^1.0.1",
     "fs": "^0.0.1-security",
+    "got": "^12.0.1",
+    "got-cjs": "^12.0.1",
     "lodash": "^4.17.21",
     "net": "^1.0.2",
-    "path": "^0.12.7"
+    "node-fetch": "^3.2.3",
+    "path": "^0.12.7",
+    "randomstring": "^1.2.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",

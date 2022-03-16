@@ -2,16 +2,15 @@ version: "3.1"
 
 services:
   expressvpn:
-    image: polkaned/expressvpn
+    image: polkaned/expressvpn:3.17.0.8-1.61ed5ffd
     container_name: expressvpn
-    environment:
-        - ACTIVATION_CODE=${CODE}
-        - SERVER=${SERVER}
     cap_add:
         - NET_ADMIN
-    devices:
-        - "/dev/net/tun:/dev/net/tun"
+    devices: 
+        - /dev/net/tun
     privileged: true
+    stdin_open: true
     tty: true
     command: /bin/bash
     restart: unless-stopped
+    environment:
