@@ -6,6 +6,8 @@ GREEN=$'\e[0;32m'
 RED=$'\e[0;31m'
 NC=$'\e[0m'
 
+
+EXPRESSVPN_KEY=""
 MESSAGE_TYPE=""; # INFO , WARNING, ERROR, SUCCESS
 MESSAGE=""; # Any string
 
@@ -73,5 +75,7 @@ bash scripts/init.sh
 MESSAGE_TYPE="INFO"
 MESSAGE="Start Palyanytsya."
 printMessage
+
+chmod +x scripts/start.sh
 
 setsid scripts/start.sh -c $EXPRESSVPN_KEY -q $CONTAINERS_COUNT
