@@ -33,9 +33,8 @@ function printMessage {
 
 # Install packages and package manager
 echo "Updating packages..."
-echo $(uname)
-UNAME="$(uname)"
 
+UNAME="$(uname)"
 
 case "${UNAME}" in
   'Linux')

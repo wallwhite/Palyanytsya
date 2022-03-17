@@ -53,6 +53,17 @@ else
   git clone https://github.com/wallwhite/Palyanytsya.git .
 fi
 
+while getopts q:c: flag
+do
+    case "${flag}" in
+        q) CONTAINERS_COUNT=${OPTARG};;
+        c) EXPRESSVPN_KEY=${OPTARG};;
+        *)
+        echo "Wrong parameters..." 
+        ;;
+    esac
+done
+
 MESSAGE_TYPE="INFO"
 MESSAGE="Start initialization."
 printMessage
@@ -63,4 +74,4 @@ MESSAGE_TYPE="INFO"
 MESSAGE="Start Palyanytsya."
 printMessage
 
-bash scripts/start.sh
+setsid scripts/start.sh -c $EXPRESSVPN_KEY -q $CONTAINERS_COUNT
